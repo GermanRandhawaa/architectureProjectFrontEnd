@@ -279,7 +279,7 @@ function displayFriendlyResumeFeedback(data, resumeName) {
 
 function goLogin() {
     const choice = confirm("Are you sure you want to logout?");
-    if (choice) window.location.href = 'Login.html';
+    if (choice) window.location.href = 'index.html';
 }
 
 function clearInputs() {

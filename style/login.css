@@ -15,7 +15,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../../assets/images/pexels-pixabay-276452.jpg"); 
+    background-image: url("../assets/images/pexels-pixabay-276452.jpg"); 
     backdrop-filter: blur(5px); 
     display: flex;
     align-items: center;

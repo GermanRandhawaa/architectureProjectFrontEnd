@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 // Handle successful registration
-                window.location.href = 'login.html'; // Redirect to login page
+                window.location.href = 'index.html'; // Redirect to login page
             } else {
                 console.error('Registration failed');
                 
