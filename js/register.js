@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(username, email, password);
 
         try {
-            const response = await fetch('http://localhost:3000/register', {
+            const response = await fetch('https://projectarchitecturebackend.onrender.com/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

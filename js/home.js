@@ -8,7 +8,7 @@ function addResume(resume) {
 }
 
 async function getApiCallCount() {
-    const res = await fetch(`http://localhost:3000/apiCallCount/${localStorage.getItem('username')}`, {
+    const res = await fetch(`https://projectarchitecturebackend.onrender.com/apiCallCount/${localStorage.getItem('username')}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ function addResumeToList() {
 
         if (resume.name.endsWith('.docx') && resume.size < 5000000) {
             addResume(resume);
-            fetch(`http://localhost:3000/description-analysis/${localStorage.getItem('username')}`, {
+            fetch(`https://projectarchitecturebackend.onrender.com/description-analysis/${localStorage.getItem('username')}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ function sendDataToServer(jobDescription, resume) {
             resumeResults.push({ name: resume.name, similarity: data.similarity });
             displayResults();
             document.getElementById('errorMessage').style.display = 'none';
-            fetch(`http://localhost:3000/incrementCount/${localStorage.getItem('username')}`, {
+            fetch(`https://projectarchitecturebackend.onrender.com/incrementCount/${localStorage.getItem('username')}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -191,7 +191,7 @@ function getResFeedback() {
             // Optionally, clear the resumes array if feedback should only be fetched once
             // resumes = [];
 
-            fetch(`http://localhost:3000/resume-feedback/${localStorage.getItem('username')}`, {
+            fetch(`https://projectarchitecturebackend.onrender.com/resume-feedback/${localStorage.getItem('username')}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -227,7 +227,7 @@ function getJobDesFeedback() {
     .then(response => response.json())
     .then(data => {
         displayFriendlyJobDescFeedback(data);
-        fetch(`http://localhost:3000/job-feedback/${localStorage.getItem('username')}`, {
+        fetch(`https://projectarchitecturebackend.onrender.com/job-feedback/${localStorage.getItem('username')}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = prompt('Enter your password:');
 
         try {
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch('https://projectarchitecturebackend.onrender.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

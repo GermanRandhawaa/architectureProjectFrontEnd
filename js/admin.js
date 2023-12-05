@@ -1,5 +1,5 @@
 // Fetch user information from the server and populate the table
-fetch("http://localhost:3000/get-all-users")
+fetch("https://projectarchitecturebackend.onrender.com/get-all-users")
   .then((response) => response.json())
   .then((users) => {
     const tableBody = document.getElementById("userTableBody");
@@ -16,7 +16,7 @@ fetch("http://localhost:3000/get-all-users")
       deleteButton.addEventListener("click", () => handleDelete(user.username));
       cell3.appendChild(deleteButton);
       fetch(
-        `http://localhost:3000/userinfos/${localStorage.getItem("username")}`,
+        `https://projectarchitecturebackend.onrender.com/userinfos/${localStorage.getItem("username")}`,
         {
           method: "PATCH",
           headers: {
@@ -30,7 +30,7 @@ fetch("http://localhost:3000/get-all-users")
   .catch((error) => console.error("Error fetching user information:", error));
 
 
-  fetch("http://localhost:3000/get-calls")
+  fetch("https://projectarchitecturebackend.onrender.com/get-calls")
   .then((response) => response.json())
   .then((users) => {
     const tableBody = document.getElementById("apiTableBody");
@@ -44,7 +44,7 @@ fetch("http://localhost:3000/get-all-users")
   })
   .catch((error) => console.error("Error fetching api information:", error));
 
-  fetch("http://localhost:3000/get-ep")
+  fetch("https://projectarchitecturebackend.onrender.com/get-ep")
   .then((response) => response.json())
   .then((users) => {
     const tableBody = document.getElementById("epTableBody");
@@ -77,7 +77,7 @@ function handleDelete(username) {
   );
   if (confirmDelete) {
     // Send a DELETE request to the server
-    fetch(`http://localhost:3000/users/${username}`, {
+    fetch(`https://projectarchitecturebackend.onrender.com/users/${username}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
