@@ -57,15 +57,13 @@ fetch("https://projectarchitecturebackend.onrender.com/get-all-users")
       const cell5 = row.insertCell(4);
       const cell6 = row.insertCell(5);
       const cell7 = row.insertCell(6);
-      const cell8 = row.insertCell(7);
       cell1.textContent = user.username;
       cell2.textContent = user.descAnalysis;
       cell3.textContent = user.resumeFeedback;
       cell4.textContent = user.jobFeedback;
       cell5.textContent = user.calls;
-      cell6.textContent = user.login;
-      cell7.textContent = user.userinfos;
-      cell8.textContent = user.deleteCount;
+      cell6.textContent = user.userinfos;
+      cell7.textContent = user.deleteCount;
     });
   })
   .catch((error) => console.error("Error fetching api information:", error));
