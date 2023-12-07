@@ -67,26 +67,29 @@ fetch("https://projectarchitecturebackend.onrender.com/get-all-users")
     });
   })
   .catch((error) => console.error("Error fetching api information:", error));
-
-function handleDelete(username) {
-  // Confirm if the user wants to delete
-  const confirmDelete = confirm(
-    `Are you sure you want to delete the user ${username}?`
-  );
-  if (confirmDelete) {
-    // Send a DELETE request to the server
-    fetch(`https://projectarchitecturebackend.onrender.com/users/${username}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+  function handleDelete(username) {
+    // Confirm if the user wants to delete
+    const confirmDelete = confirm(
+      `Are you sure you want to delete the user ${username}?`
+    );
+  
+    if (confirmDelete) {
+      // Send a DELETE request to the server
+      fetch(`https://projectarchitecturebackend.onrender.com/users/${username}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => response.json())
       .then((data) => {
         console.log(data.message);
-        // Refresh the page or update the table after successful deletion
-        location.reload();
+        // Wait for 2 seconds after successful deletion before reloading
+        setTimeout(() => {
+          location.reload();
+        }, 1500);
       })
       .catch((error) => console.error("Error deleting user:", error));
+    }
   }
-}
+  
