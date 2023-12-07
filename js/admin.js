@@ -30,19 +30,19 @@ fetch("https://projectarchitecturebackend.onrender.com/get-all-users")
   .catch((error) => console.error("Error fetching user information:", error));
 
 
-  // fetch("https://projectarchitecturebackend.onrender.com/get-calls")
-  // .then((response) => response.json())
-  // .then((users) => {
-  //   const tableBody = document.getElementById("apiTableBody");
-  //   users.forEach((user) => {
-  //     const row = tableBody.insertRow();
-  //     const cell1 = row.insertCell(0);
-  //     const cell2 = row.insertCell(1);
-  //     cell1.textContent = user.username;
-  //     cell2.textContent = user.api_calls;
-  //   });
-  // })
-  // .catch((error) => console.error("Error fetching api information:", error));
+  fetch("https://projectarchitecturebackend.onrender.com/get-calls")
+  .then((response) => response.json())
+  .then((users) => {
+    const tableBody = document.getElementById("apiTableBody");
+    users.forEach((user) => {
+      const row = tableBody.insertRow();
+      const cell1 = row.insertCell(0);
+      const cell2 = row.insertCell(1);
+      cell1.textContent = user.username;
+      cell2.textContent = user.api_calls;
+    });
+  })
+  .catch((error) => console.error("Error fetching api information:", error));
 
   fetch("https://projectarchitecturebackend.onrender.com/get-ep")
   .then((response) => response.json())
