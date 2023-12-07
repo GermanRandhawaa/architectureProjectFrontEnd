@@ -62,7 +62,7 @@ fetch("https://projectarchitecturebackend.onrender.com/get-all-users")
       cell3.textContent = user.resumeFeedback;
       cell4.textContent = user.jobFeedback;
       cell5.textContent = user.calls;
-      cell6.textContent = user.userinfos;
+      cell6.textContent = user.login;
       cell7.textContent = user.deleteCount;
     });
   })
