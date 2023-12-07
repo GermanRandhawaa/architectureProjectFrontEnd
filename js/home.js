@@ -321,8 +321,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 console.error('Invalid credentials');
-                alert('Invalid credentials');
-                // Show an error message to the user or perform any other action
+                alert('Invalid credentials or operation.');
+               
             }
         } catch (error) {
             console.error('Error:', error);
