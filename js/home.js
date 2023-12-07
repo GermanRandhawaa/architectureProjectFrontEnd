@@ -315,9 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const { role } = await response.json();
                 // Check the role of the user
                 if (role === 'admin') {
-                    window.open('admin.html', '_blank');
-                    
-                    window.close();
+                    window.location.href = 'admin.html';
                 } else {
                     window.location.href = 'home.html';
                 }

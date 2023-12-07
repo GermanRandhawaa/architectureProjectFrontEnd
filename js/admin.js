@@ -1,3 +1,14 @@
+window.addEventListener('load', function () {
+  history.pushState(null, null, window.location.href);  
+  window.addEventListener('popstate', function () {
+      window.location.href = 'login.html';
+  });
+});
+
+
+
+
+
 // Fetch user information from the server and populate the table
 fetch("https://projectarchitecturebackend.onrender.com/get-all-users")
   .then((response) => response.json())
@@ -84,10 +95,10 @@ fetch("https://projectarchitecturebackend.onrender.com/get-all-users")
       .then((response) => response.json())
       .then((data) => {
         console.log(data.message);
-        // Wait for 2 seconds after successful deletion before reloading
+        
         setTimeout(() => {
           location.reload();
-        }, 1500);
+        }, 6500);
       })
       .catch((error) => console.error("Error deleting user:", error));
     }
