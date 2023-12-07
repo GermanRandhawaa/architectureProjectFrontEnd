@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
   history.pushState(null, null, window.location.href);  
   window.addEventListener('popstate', function () {
-      window.location.href = 'login.html';
+      window.location.href = 'index.html';
   });
 
   // Update calls for all users and then fetch user information
